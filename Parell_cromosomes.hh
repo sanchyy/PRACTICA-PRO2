@@ -15,26 +15,11 @@ private:
 
   vector< pair<char,char> > Parell_cromosoma; 
 
-  /** @brief
-      \pre c1 i c2 son parells de cromosomes no buits
-      \post resulta un parell de cromosoma intersecció entre c1 i c2
-  */
-  Parell_cromosomes(const Parell_cromosomes & c1, const Parell_cromosomes & c2); 
-
 public:
 
   //Constructora
-  /** @brief
-      \pre true
-      \post resulta un parell de cromosoma de mida m
-  */
-  Parell_cromosomes(int m);
-  
-  /** @brief
-      \pre c1 un parell de cromosomes no buits
-      \post resulta un parell de cromosoma igual a c1;
-  */
-  Parell_cromosomes(const Parell_cromosomes & c1);
+
+    Parell_cromosomes();
 
   /** @brief
       \pre el p.i. és un Parell_cromosoma.
@@ -42,7 +27,7 @@ public:
   */
   ~Parell_cromosomes();
 
-  void mida(int m);
+  static void defineix_mida(int m); 
 
   /** @brief
       \pre el p.i. és un Parell_cromosoma no buit
@@ -56,16 +41,10 @@ public:
   */
   void llegir();
 
+  void update_add(Parell_cromosomes& c2);
 
-  /** @brief
-      \pre el p.i. és un Parell_cromosoma, pot estar buit o no serho
-      \post el p.i. ara és la intersecció millorada dels dos cromosomes
-  */
-Parell_cromosomes& update(const Parell_cromosomes & c1, const Parell_cromosomes & c2) const;
 
-char cromosoma_pos(int i, bool b);
-
-void guionet(int i, bool b);
+  char consulta_iessim(int i, bool b);
 };
 
 #endif //PARELL_CROMOSOMA_HH

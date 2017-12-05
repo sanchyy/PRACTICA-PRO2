@@ -7,15 +7,16 @@
 #endif // NO_DIAGRAM
 
 #include "Individu.hh"
-#include "Tret.hh"
+#include "Cjt_Tret.hh"
+#include "BinTree.hh"
 using namespace std;
 
 class Familia_individus {
 private:
 
+  BinTree <int> main_tree;
+
   map <int,Individu> familia;
-  
-  map < string, set<string> > trets;
 
   int n;
 
@@ -35,40 +36,31 @@ public:
   */
   ~Familia_individus();
 
-  //modificadora 
-  /** @brief
-      \pre n=#individus a llegir, m = mida cromosomes, familia i trets són buits;
-      \post familia conté n individus de m cromosomes
-  */
-  void fer_experiment(int n,int m);
+  //modificadora
 
   /** @brief
-      \pre true;
-      \post map amb tots els individus i el parell de cromosomes de cada individu;
+    \pre n = nombre d'individus i m = mida del Parell de cromosomes
+    \post experiment començat i s'ha creat un arbre amb els individus i el respectiu parell de cromosomes
   */
-  void llegir();
+  void experiment(int n,int m);
 
   /** @brief
-      \pre t = nom del tret i id = identificador de l'individu
-      \post s'ha desvinculat el tret de l'individu si aquest el tenia, en cas contrari, simplement es mostrarà <em>error</em> pel canal estàndard de sortida
+    \pre tret = Tret i id = ID
+    \post s'afegeix tret a un individu amb id = ID. En cas que ja tingués aquest tret, sortirà <em>error</em> pel canal estàndar de sortida
   */
-  void treure_tret(const string& t, int id);
+  
+  void llegir_arbre(BinTree<int>& a);
 
-  /** @brief
-      \pre t = nom del tret i id = identificador de l'individu
-      \post s'ha afegit el tret de l'individu si aquest no el tenia, en cas contrari, simplement es mostrarà <em>error</em> pel canal estàndard de sortida
-  */
-  void afegir_tret(const string& t, int id); 
+  void llegir_map(int n);
 
-  /** @brief
-      \pre familia = BinTree de tots els individus i id = identificador de l'individu
-      \post es retorna l'individu amb id = ID;
-  */ 
+  void escriure_arbre(const string &tret);
 
-private:
-  /** Aquí s'implementaran les funcions necessàries
-      per la implementació de les funcions públiques.
-  */
+  void consulta_individu(int id);
+
+  void distribucio_tret(const BinTree <int> &a, string& tret);
+
+  void afegir_tret()
 };
+
 
 #endif // FAMILIA_INDIVIDUS_HH

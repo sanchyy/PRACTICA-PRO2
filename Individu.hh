@@ -8,12 +8,14 @@
 #endif // NO_DIAGRAM
 
 #include "Parell_cromosomes.hh"
-#include "Tret.hh"
 
 class Individu {
 private:
+
   Parell_cromosomes Contingut_genetic;
+
   int id;
+
   set <string> trets_individu;
 
 public:
@@ -46,9 +48,7 @@ public:
   void consulta_individu();
 
 
-  const Parell_cromosomes& consulta_contingut();
-
-  Parell_cromosomes& consulta_cromosoma() const;
+  Parell_cromosomes &consulta_cromosoma();
 
   //modificadora
   
@@ -60,13 +60,9 @@ public:
 
   void treure_tret(const string& t);
 
-  bool te_tret(const string& t);
-
-  void llegir();
-
   void escriure();
 
-  int consulta_id();
+  bool individu_te_aquest_tret(const string &t);
 };
 
 
