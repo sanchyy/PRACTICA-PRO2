@@ -9,9 +9,8 @@ Familia_individus::Familia_individus() {
 Familia_individus::~Familia_individus(){}
 
 void Familia_individus::experiment(int n, int m) {
-	Familia_individus f;
-	f.llegir_arbre(main_tree);
-	f.llegir_map(n);
+	this->llegir_arbre(main_tree);
+	this->llegir_map(n);
 	Parell_cromosomes::defineix_mida(m);
 }
 
@@ -40,15 +39,15 @@ void Familia_individus::i_escriure_arbre(const BinTree <int>& a, const string &t
 	else {
 		BinTree <int> left;
 		BinTree <int> right;
-		escriure_arbre(left,t);
-		escriure_arbre(right,t);
+		i_escriure_arbre(left,t);
+		i_escriure_arbre(right,t);
 		if (b) cout << a.value();
 		else cout << '-' << a.value();
 	}
 }
 
 void Familia_individus::escriure_arbre(const string &tret) {
-	void escriure_arbre(const BinTree <int>& a, const string &tret);
+	this->escriure_arbre(const BinTree <int>& a, const string &tret);
 }
 
 void Familia_individus::consulta_individu(int id) {

@@ -3,9 +3,9 @@
 
 #ifndef NO_DIAGRAM
 #include <iostream>
-#include <map>
 #include <set>
 #endif // NO_DIAGRAM
+using namespace std;
 
 #include "Parell_cromosomes.hh"
 

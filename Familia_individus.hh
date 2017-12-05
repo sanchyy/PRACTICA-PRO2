@@ -7,7 +7,6 @@
 #endif // NO_DIAGRAM
 
 #include "Individu.hh"
-#include "Cjt_Tret.hh"
 #include "BinTree.hh"
 using namespace std;
 
@@ -59,7 +58,9 @@ public:
 
   void distribucio_tret(const BinTree <int> &a, string& tret);
 
-  void afegir_tret()
+  void i_escriure_arbre(const BinTree <int>& a, const string &t);
+
+  //void afegir_tret();
 };
 
 
