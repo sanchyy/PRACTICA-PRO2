@@ -1,58 +1,109 @@
+#include <iostream>
+#include <map>
 #include "Familia_individus.hh"
+using namespace std;
 
 Familia_individus::Familia_individus() {
-	main_tree = BinTree <int> ();
-	familia.clear();
-	n = 0;
+  map <int,Individu> familia;
+  map <string,Tret> trets;
+  int n = 0;
+}
+
+Familia_individus::Familia_individus(int m) {
+  map <int,Individu> familia;
+  map <string,Tret> trets;
+  int n = m;
 }
 
 Familia_individus::~Familia_individus(){}
 
-void Familia_individus::experiment(int n, int m) {
-	this->llegir_arbre(main_tree);
-	this->llegir_map(n);
-	Parell_cromosomes::defineix_mida(m);
+void Familia_individus::llegir(int n, int mida_parell) {
+	cerr << "he entrat a la funcio" << endl;
+
+	for (int i = 1; i  <= n; ++i) {
+		cerr << "iteracio: " << i << endl;
+
+		Individu ind;
+		ind.setId(i);
+		ind.llegir(mida_parell);
+		familia[i] = ind;
+	}
+
+	cerr << "end llegir" << endl;
 }
 
-void Familia_individus::llegir_map(int n) {
-	for (int i = 1; i <= n; ++i)
-		familia.insert({i,Individu()});
+void Familia_individus::afegir_tret(const string& t, int id) {
+	auto punter = trets.find(t); //punter a tret
+	auto it = familia.find(id); //punter a individu
+	if (it != familia.end()) {
+		if (punter == trets.end()){ 
+			trets[t] = Tret();
+			trets[t].modificar_carac(it->second.consulta_cromosoma());
+		}
+		else{
+			trets[t].afegir_tret(id,it->second.consulta_cromosoma());
+		}
+		it ->second.afegir_tret(t);
+	}
+	else cout << "  error" << endl;
 }
 
-void Familia_individus::llegir_arbre(BinTree <int>& a) {
-	int x;
-	cin >> x;
-	if (x == 0) return;
+void Familia_individus::treure_tret(const string& t, int id) {
+	auto punter = trets.find(t);
+	auto it = familia.find(id);
+	if (punter == trets.end() or it == familia.end() or not it->second.individu_te_aquest_tret(t)) cout << "  error" << endl;
 	else {
-		BinTree <int> left;
-		BinTree <int> right;
-		llegir_arbre(left);
-		llegir_arbre(right);
-		a = BinTree <int>(x,left,right);
+		int mida = punter->second.consultar_size();
+		if ( mida == 1) {
+			trets.erase(punter);
+		}
+		else {
+			punter->second.treure_tret(id);
+			auto it_tret = trets.find(t);
+			bool first = true;
+			Parell_cromosomes p;
+			for (int x:it_tret->second.consulta_carac_tret()) {
+				auto it_fam = familia.find(x); //busco la id al map
+				Individu ind = it_fam -> second;
+				if (first){
+					p = ind.consulta_cromosoma();
+					first = not first;	
+					p.escriure();				
+				} 
+				else {
+					p.update_add(ind.consulta_cromosoma());
+					p.escriure();
+				}
+				
+			}
+		}
 	}
 }
 
-void Familia_individus::i_escriure_arbre(const BinTree <int>& a, const string &t) {
-	auto it = familia.find(a.value());
-	bool b = it ->second.individu_te_aquest_tret(t);
-	if (a.empty()) return;
+void Familia_individus::consulta_tret(const string &t) {
+	auto it = trets.find(t);
+	if (it == trets.end()) cout << "  error" << endl;
 	else {
-		BinTree <int> left;
-		BinTree <int> right;
-		i_escriure_arbre(left,t);
-		i_escriure_arbre(right,t);
-		if (b) cout << a.value();
-		else cout << '-' << a.value();
+		cout << "  " << it->first << endl;
+		cerr << "vaig a escriure els cromosomes per consultar individu 1" << endl;
+		it->second.consulta_tret();
 	}
-}
-
-void Familia_individus::escriure_arbre(const string &tret) {
-	this->escriure_arbre(const BinTree <int>& a, const string &tret);
 }
 
 void Familia_individus::consulta_individu(int id) {
 	auto it = familia.find(id);
-	if (it == familia.end()) cout << "  error" << endl;
+	if (it == familia.end()) 
+		cout << "  error" << endl;
 	else 
-		it ->second.consulta_individu();
+		it ->second.escriure();
+}
+
+bool Familia_individus::distribucio_tret(const string &t) {
+	auto it = trets.find(t);
+	return it == trets.end();
+}
+
+bool Familia_individus::el_te(int id,const string &t) {
+	auto it = familia.find(id);
+	return it ->second.individu_te_aquest_tret(t);
 }

@@ -11,15 +11,14 @@ using namespace std;
 class Parell_cromosomes{
 private:
 
-  static int m;
-
+  int m;
   vector< pair<char,char> > Parell_cromosoma; 
 
 public:
 
   //Constructora
 
-    Parell_cromosomes();
+  Parell_cromosomes();
 
   /** @brief
       \pre el p.i. és un Parell_cromosoma.
@@ -27,7 +26,7 @@ public:
   */
   ~Parell_cromosomes();
 
-  static void defineix_mida(int m); 
+  void defineix_mida(int mida); 
 
   /** @brief
       \pre el p.i. és un Parell_cromosoma no buit
@@ -39,12 +38,12 @@ public:
       \pre el p.i. és un Parell_cromosoma buit
       \post s'ha llegit el Parell_cromosoma pel canal estandard d'entrada
   */
-  void llegir();
+  void llegir(int m);
 
   void update_add(Parell_cromosomes& c2);
 
-
   char consulta_iessim(int i, bool b);
+
 };
 
 #endif //PARELL_CROMOSOMA_HH

@@ -1,31 +1,49 @@
+#include <iostream>
+using namespace std;
 #include "Individu.hh"
 
 Individu::Individu() {
-	Contingut_genetic = Parell_cromosomes();
-	id = 0;
-	trets_individu.clear();
-}
-
-Individu::Individu(int id) {
-	Contingut_genetic = Parell_cromosomes();
-	this -> id = id;
-	trets_individu.clear();
+  Parell_cromosomes Contingut_genetic;
+  int id = 0;
+  set <string> trets_individu;
 }
 
 Individu::~Individu(){}
 
-Parell_cromosomes &Individu::consulta_cromosoma(){
+void Individu::consulta_individu() {
+	Contingut_genetic.escriure();
+}
+
+Parell_cromosomes& Individu::consulta_cromosoma() {
 	return Contingut_genetic;
 }
 
-void Individu::consulta_individu() {
-	Contingut_genetic.escriure();
-	for (string strung:trets_individu)
-		cout << "  " << strung << endl;
+void Individu::afegir_tret(const string& t) {
+	auto it = trets_individu.find(t);
+	trets_individu.insert(it,t);
 }
 
-bool individu_te_aquest_tret(const string &t) {
+void Individu::treure_tret(const string& t) {
+	auto it = trets_individu.find(t);
+	trets_individu.erase(it);
+}
+
+void Individu::llegir(int m) {	
+	Contingut_genetic.llegir(m);
+}
+
+void Individu::escriure() {
+	Contingut_genetic.escriure();
+	if (!trets_individu.empty()) {
+		for (string s:trets_individu) cout << "  " << s << endl;
+	}
+}
+
+void Individu::setId(int id) {
+	this->id = id;
+}
+
+bool Individu::individu_te_aquest_tret(const string & t) {
 	return trets_individu.find(t) != trets_individu.end();
 }
-
 

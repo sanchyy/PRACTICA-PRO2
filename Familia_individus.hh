@@ -7,16 +7,14 @@
 #endif // NO_DIAGRAM
 
 #include "Individu.hh"
-#include "BinTree.hh"
+#include "Tret.hh"
 using namespace std;
 
 class Familia_individus {
 private:
 
-  BinTree <int> main_tree;
-
   map <int,Individu> familia;
-
+  map <string,Tret> trets;
   int n;
 
 public:
@@ -26,8 +24,10 @@ public:
       \pre true
       \post resulta una Familia_individus buida
   */
-  Familia_individus();
+  Familia_individus(int n);
 
+
+  Familia_individus();
   //Destructora
   /** @brief
       \pre el p.i. és una Família d'individus
@@ -35,33 +35,39 @@ public:
   */
   ~Familia_individus();
 
-  //modificadora
+  //modificadora 
 
   /** @brief
-    \pre n = nombre d'individus i m = mida del Parell de cromosomes
-    \post experiment començat i s'ha creat un arbre amb els individus i el respectiu parell de cromosomes
+      \pre true;
+      \post map amb tots els individus i el parell de cromosomes de cada individu;
   */
-  void experiment(int n,int m);
 
   /** @brief
-    \pre tret = Tret i id = ID
-    \post s'afegeix tret a un individu amb id = ID. En cas que ja tingués aquest tret, sortirà <em>error</em> pel canal estàndar de sortida
+      \pre t = nom del tret i id = identificador de l'individu
+      \post s'ha desvinculat el tret de l'individu si aquest el tenia, en cas contrari, simplement es mostrarà <em>error</em> pel canal estàndard de sortida
   */
-  
-  void llegir_arbre(BinTree<int>& a);
+  void treure_tret(const string& t, int id);
 
-  void llegir_map(int n);
+  /** @brief
+      \pre t = nom del tret i id = identificador de l'individu
+      \post s'ha afegit el tret de l'individu si aquest no el tenia, en cas contrari, simplement es mostrarà <em>error</em> pel canal estàndard de sortida
+  */
+  void afegir_tret(const string& t, int id); 
 
-  void escriure_arbre(const string &tret);
+  void llegir(int n, int m);
+
+  void consulta_tret(const string &t);
 
   void consulta_individu(int id);
 
-  void distribucio_tret(const BinTree <int> &a, string& tret);
+  bool distribucio_tret(const string &t);
 
-  void i_escriure_arbre(const BinTree <int>& a, const string &t);
+  bool el_te(int id, const string &t); 
 
-  //void afegir_tret();
+private:
+  /** Aquí s'implementaran les funcions necessàries
+      per la implementació de les funcions públiques.
+  */
 };
-
 
 #endif // FAMILIA_INDIVIDUS_HH

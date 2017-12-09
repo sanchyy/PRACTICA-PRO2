@@ -3,19 +3,17 @@
 
 #ifndef NO_DIAGRAM
 #include <iostream>
+#include <map>
 #include <set>
 #endif // NO_DIAGRAM
-using namespace std;
 
 #include "Parell_cromosomes.hh"
+#include "Tret.hh"
 
 class Individu {
 private:
-
   Parell_cromosomes Contingut_genetic;
-
   int id;
-
   set <string> trets_individu;
 
 public:
@@ -30,9 +28,9 @@ public:
 
    /** @brief
       \pre true
-      \post resulta un Individu buit
+      \post resulta un Individu amb id id
   */
-  Individu(int id);
+
 
   //destructora
 
@@ -47,8 +45,7 @@ public:
   */
   void consulta_individu();
 
-
-  Parell_cromosomes &consulta_cromosoma();
+  Parell_cromosomes& consulta_cromosoma();
 
   //modificadora
   
@@ -60,9 +57,16 @@ public:
 
   void treure_tret(const string& t);
 
+  void llegir(int m);
+
   void escriure();
 
-  bool individu_te_aquest_tret(const string &t);
+  int consulta_id();
+
+  bool individu_te_aquest_tret(const string & t);
+
+  void setId(int id);
+
 };
 
 
