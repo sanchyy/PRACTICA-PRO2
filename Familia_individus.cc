@@ -18,18 +18,13 @@ Familia_individus::Familia_individus(int m) {
 Familia_individus::~Familia_individus(){}
 
 void Familia_individus::llegir(int n, int mida_parell) {
-	cerr << "he entrat a la funcio" << endl;
 
 	for (int i = 1; i  <= n; ++i) {
-		cerr << "iteracio: " << i << endl;
-
 		Individu ind;
 		ind.setId(i);
 		ind.llegir(mida_parell);
 		familia[i] = ind;
 	}
-
-	cerr << "end llegir" << endl;
 }
 
 void Familia_individus::afegir_tret(const string& t, int id) {
@@ -44,6 +39,7 @@ void Familia_individus::afegir_tret(const string& t, int id) {
 			trets[t].afegir_tret(id,it->second.consulta_cromosoma());
 		}
 		it ->second.afegir_tret(t);
+		trets[t].afegir_alset(id);
 	}
 	else cout << "  error" << endl;
 }
@@ -85,7 +81,6 @@ void Familia_individus::consulta_tret(const string &t) {
 	if (it == trets.end()) cout << "  error" << endl;
 	else {
 		cout << "  " << it->first << endl;
-		cerr << "vaig a escriure els cromosomes per consultar individu 1" << endl;
 		it->second.consulta_tret();
 	}
 }
@@ -100,7 +95,7 @@ void Familia_individus::consulta_individu(int id) {
 
 bool Familia_individus::distribucio_tret(const string &t) {
 	auto it = trets.find(t);
-	return it == trets.end();
+	return it != trets.end();
 }
 
 bool Familia_individus::el_te(int id,const string &t) {

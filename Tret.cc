@@ -12,17 +12,13 @@ Tret::Tret() {
 Tret::~Tret(){}
 
 void Tret::consulta_tret() {
-	cerr << "vaig a escriure els cromosomes per consultar tret 2" << endl;
 	carac_tret.escriure();
-	cerr << "L'hauria d'haver tret" << endl;
-	for (int x:individus_amb_aquest_tret) cout << "  " << x << endl;
-	}
+	for (int x:individus_amb_aquest_tret) 
+		cout << "  " << x << endl;
+}
 
 void Tret::afegir_tret(int id, Parell_cromosomes& c1) {
-	cerr << "died afegir_tret ?" << endl;
-	auto punter = individus_amb_aquest_tret.find(id);
-	cerr << "id: " << id << endl;
-	individus_amb_aquest_tret.insert(punter,id);
+	individus_amb_aquest_tret.insert(id);
 	carac_tret.update_add(c1);
 }
 void Tret::treure_tret(int id) {
@@ -45,4 +41,8 @@ int Tret::consultar_size() {
 
 const set <int> &Tret::consulta_carac_tret() {
   	return individus_amb_aquest_tret;
+}
+
+void Tret::afegir_alset(int id) {
+	individus_amb_aquest_tret.insert(id);
 }

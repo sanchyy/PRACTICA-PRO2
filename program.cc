@@ -17,14 +17,14 @@ int main() {
       string t;
       int id; 
       cin >> t >> id;
-      cout << accio << ' ' << id << ' ' << t << endl;
+      cout << accio << ' ' << t << ' ' << id << endl;
       e.afegir_tret(t,id);
     }
     else if (accio == "treure") {
       string t;
       int id; 
       cin >> t >> id;
-      cout << accio << ' ' << id << ' ' << t << endl;
+      cout << accio << ' ' << t << ' ' << id << endl;
       e.treure_tret(t,id);
     }
     else if (accio == "consulta_tret") {
@@ -47,8 +47,6 @@ int main() {
       cout << endl;
     }
     cin >> accio;
-
-    cerr << "accio " << accio << endl;
   }
   return 0;
 }

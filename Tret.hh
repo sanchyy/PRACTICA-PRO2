@@ -51,6 +51,8 @@ public:
   int consultar_size();
 
   const set <int> &consulta_carac_tret();
+
+  void afegir_alset(int id);
 };
 
 #endif //TRETS_HH
