@@ -33,9 +33,6 @@ int main() {
       e.consulta_tret(t);
     }
     else if (accio == "consulta_individu") {
-
-      cerr << "consultar_individu" << endl;
-
       int id; cin >> id;
       cout << accio << ' ' << id << endl;
       e.consulta_individu(id);
@@ -44,7 +41,6 @@ int main() {
       string t; cin >> t;
       cout << accio << ' '  << t << endl;
       e.distribucio_tret(t);
-      cout << endl;
     }
     cin >> accio;
   }

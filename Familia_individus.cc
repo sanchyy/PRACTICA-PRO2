@@ -30,12 +30,12 @@ void Familia_individus::llegir(int n, int mida_parell) {
 void Familia_individus::afegir_tret(const string& t, int id) {
 	auto punter = trets.find(t); //punter a tret
 	auto it = familia.find(id); //punter a individu
-	if (it != familia.end()) {
+	if (it != familia.end() and not it ->second.individu_te_aquest_tret(t)) { //id existeix o id ja té el tret
 		if (punter == trets.end()){ 
 			trets[t] = Tret();
 			trets[t].modificar_carac(it->second.consulta_cromosoma());
 		}
-		else{
+		else {
 			trets[t].afegir_tret(id,it->second.consulta_cromosoma());
 		}
 		it ->second.afegir_tret(t);
@@ -63,12 +63,10 @@ void Familia_individus::treure_tret(const string& t, int id) {
 				Individu ind = it_fam -> second;
 				if (first){
 					p = ind.consulta_cromosoma();
-					first = not first;	
-					p.escriure();				
+					first = not first;					
 				} 
 				else {
 					p.update_add(ind.consulta_cromosoma());
-					p.escriure();
 				}
 				
 			}
@@ -89,8 +87,11 @@ void Familia_individus::consulta_individu(int id) {
 	auto it = familia.find(id);
 	if (it == familia.end()) 
 		cout << "  error" << endl;
-	else 
+	else {
 		it ->second.escriure();
+		it ->second.escriure_trets_individu();
+	}
+
 }
 
 bool Familia_individus::distribucio_tret(const string &t) {

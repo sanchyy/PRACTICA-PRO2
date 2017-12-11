@@ -27,16 +27,15 @@ void Parell_cromosomes::llegir(int m) {
 	for (int i = 0; i < m; ++i) cin >> a[i].second;
 
 	this->Parell_cromosoma = a;
-
 }
 
 void Parell_cromosomes::update_add(Parell_cromosomes& c2) {
-	
-	for (int i = 0; i < Parell_cromosoma.size(); ++i) {
-		if (Parell_cromosoma[i].first != c2.consulta_iessim(i,1))
+	int tam = Parell_cromosoma.size();
+	for (int i = 0; i < tam; ++i) {
+		if ((Parell_cromosoma[i].first != c2.consulta_iessim(i,1)) or (Parell_cromosoma[i].first != Parell_cromosoma[i].second) or (Parell_cromosoma[i].second != c2.consulta_iessim(i,0)) or (c2.consulta_iessim(i,1) != c2.consulta_iessim(i,0))) {
 			Parell_cromosoma[i].first = '-';
-		if (Parell_cromosoma[i].second != c2.consulta_iessim(i,0))
 			Parell_cromosoma[i].second = '-';
+		}	
 	}
 }
 

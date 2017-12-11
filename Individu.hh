@@ -67,6 +67,8 @@ public:
 
   void setId(int id);
 
+  void escriure_trets_individu();
+
 };
 
 

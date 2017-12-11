@@ -34,9 +34,6 @@ void Individu::llegir(int m) {
 
 void Individu::escriure() {
 	Contingut_genetic.escriure();
-	if (!trets_individu.empty()) {
-		for (string s:trets_individu) cout << "  " << s << endl;
-	}
 }
 
 void Individu::setId(int id) {
@@ -45,5 +42,10 @@ void Individu::setId(int id) {
 
 bool Individu::individu_te_aquest_tret(const string & t) {
 	return trets_individu.find(t) != trets_individu.end();
+}
+
+void Individu::escriure_trets_individu() {
+	for (string s:trets_individu)
+		cout << "  " << s << endl;
 }
 

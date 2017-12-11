@@ -1,8 +1,4 @@
 #include "Tret.hh"
-#include <iostream>
-using namespace std;
-
-
 
 Tret::Tret() {
 	Parell_cromosomes carac_tret;
@@ -25,7 +21,6 @@ void Tret::treure_tret(int id) {
 	auto punter = individus_amb_aquest_tret.find(id);
 	individus_amb_aquest_tret.erase(punter);
 }
-
 
 bool Tret::individu_te_aquest_tret(int id) {
 	return individus_amb_aquest_tret.find(id) != individus_amb_aquest_tret.end();
