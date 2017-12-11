@@ -44,5 +44,6 @@ int main() {
     }
     cin >> accio;
   }
+  cout << "fi" << endl;
   return 0;
 }

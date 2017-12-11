@@ -46,12 +46,30 @@ public:
 
   bool individu_te_aquest_tret(int id);
 
+  /** @brief
+      \pre Parell_cromosomes c1 és un Parell de cromosomes el qual volem que sigui la característica del tret
+      \post carac del tret = Parell de cromosomes c1
+  */
+
   void modificar_carac(const Parell_cromosomes& c1);
 
+  /** @brief
+      \pre true
+      \post retorna la mida del set (individus_amb_aquest_tret) del paramatre implicit
+  */
   int consultar_size();
 
+  /** @brief
+      \pre Parell_cromosomes c1 és un Parell de cromosomes el qual volem que sigui la característica del tret
+      \post carac del tret = Parell de cromosomes c1
+  
   const set <int> &consulta_carac_tret();
+  */
 
+  /** @brief
+      \pre id = ID que vols afegir 
+      \post retorna la mida del set (individus_amb_aquest_tret) del paramatre implicit
+  */
   void afegir_alset(int id);
 };
 

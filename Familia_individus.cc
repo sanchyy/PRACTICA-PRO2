@@ -47,10 +47,12 @@ void Familia_individus::afegir_tret(const string& t, int id) {
 void Familia_individus::treure_tret(const string& t, int id) {
 	auto punter = trets.find(t);
 	auto it = familia.find(id);
-	if (punter == trets.end() or it == familia.end() or not it->second.individu_te_aquest_tret(t)) cout << "  error" << endl;
+	if (punter == trets.end() or it == familia.end() or not it->second.individu_te_aquest_tret(t)) 
+		cout << "  error" << endl;
 	else {
+		it->second.treure_tret(t);
 		int mida = punter->second.consultar_size();
-		if ( mida == 1) {
+		if (mida == 1) {
 			trets.erase(punter);
 		}
 		else {
@@ -70,6 +72,7 @@ void Familia_individus::treure_tret(const string& t, int id) {
 				}
 				
 			}
+			punter->second.modificar_carac(p);
 		}
 	}
 }
