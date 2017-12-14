@@ -1,7 +1,7 @@
 #include "Parell_cromosomes.hh"	
 
 Parell_cromosomes::Parell_cromosomes() {
-	int m = 0;
+	m = 0;
 	vector<pair <char,char> > Parell_cromosoma;
 }
 

@@ -62,13 +62,14 @@ public:
   /** @brief
       \pre Parell_cromosomes c1 és un Parell de cromosomes el qual volem que sigui la característica del tret
       \post carac del tret = Parell de cromosomes c1
+  */
   
   const set <int> &consulta_carac_tret();
-  */
+  
 
   /** @brief
-      \pre id = ID que vols afegir 
-      \post retorna la mida del set (individus_amb_aquest_tret) del paramatre implicit
+      \pre id = ID que vols afegir al set
+      \post la id ha estat afegida
   */
   void afegir_alset(int id);
 };

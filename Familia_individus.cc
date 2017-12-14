@@ -6,13 +6,13 @@ using namespace std;
 Familia_individus::Familia_individus() {
   map <int,Individu> familia;
   map <string,Tret> trets;
-  int n = 0;
+  n = 0;
 }
 
 Familia_individus::Familia_individus(int m) {
   map <int,Individu> familia;
   map <string,Tret> trets;
-  int n = m;
+  n = m;
 }
 
 Familia_individus::~Familia_individus(){}

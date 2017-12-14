@@ -26,7 +26,6 @@ public:
   */
   Familia_individus(int n);
 
-
   Familia_individus();
   //Destructora
   /** @brief
@@ -54,14 +53,34 @@ public:
   */
   void afegir_tret(const string& t, int id); 
 
+  /** @brief
+      \pre n és el #individus  i m la mida del parell de cromosomes de l'experiment
+      \post s'ha llegit pe0
+  */
   void llegir(int n, int m);
 
+  /** @brief
+      \pre t = nom del tret
+      \post s'ha imprès pel canal estàndard de sortida, el Parell de cromosomes que fan possible el tret, els individus que el componen
+  */
   void consulta_tret(const string &t);
 
+  /** @brief
+      \pre t = nom del tret i id = identificador de l'individu
+      \post s'ha afegit el tret de l'individu si aquest no el tenia, en cas contrari, simplement es mostrarà <em>error</em> pel canal estàndard de sortida
+  */
   void consulta_individu(int id);
 
+  /** @brief
+      \pre t = nom del tret i id = identificador de l'individu
+      \post s'ha afegit el tret de l'individu si aquest no el tenia, en cas contrari, simplement es mostrarà <em>error</em> pel canal estàndard de sortida
+  */
   bool distribucio_tret(const string &t);
 
+  /** @brief
+      \pre t = nom del tret i id = identificador de l'individu
+      \post s'ha afegit el tret de l'individu si aquest no el tenia, en cas contrari, simplement es mostrarà <em>error</em> pel canal estàndard de sortida
+  */
   bool el_te(int id, const string &t); 
 
 private:

@@ -4,7 +4,7 @@ using namespace std;
 
 Individu::Individu() {
   Parell_cromosomes Contingut_genetic;
-  int id = 0;
+  id = 0;
   set <string> trets_individu;
 }
 

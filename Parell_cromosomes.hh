@@ -40,8 +40,17 @@ public:
   */
   void llegir(int m);
 
+  /** @brief
+      \pre el p.i. és el parell de cromosomes que es vol modificar i c2 un Parell de cromosomes
+      amb el que es vol fer la interseccio amb el p.i.
+      \post el p.i. és la intersecció de p.i. i c2. c2 no ha estat modificat.
+  */
   void update_add(Parell_cromosomes& c2);
 
+  /** @brief
+      \pre el p.i. és un Parell_cromosoma
+      \post si b = true, es retorna el cromosoma first en posicio i, en cas contrari, el ccromosoma second que ocupa la posició i.
+  */
   char consulta_iessim(int i, bool b);
 
 };
