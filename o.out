@@ -1,0 +1,95 @@
+experiment 7 5
+consulta_individu 1
+  11111
+  01010
+consulta_individu 2
+  00110
+  01101
+consulta_individu 3
+  01010
+  11101
+consulta_individu 4
+  01010
+  10110
+consulta_individu 5
+  01010
+  10110
+consulta_individu 6
+  11010
+  10101
+consulta_individu 7
+  11111
+  10011
+afegir maincra 1
+afegir maincra 2
+consulta_tret maincra
+  maincra
+  -----
+  -----
+  1
+  2
+treure maincra 1
+consulta_tret maincra
+  maincra
+  00110
+  01101
+  2
+treure maincra 2
+consulta_tret maincra
+  error
+afegir creeper 3
+afegir creeper 7
+afegir creeper 4
+afegir creeper 3
+  error
+distribucio_tret maincra
+  error
+distribucio_tret creeper
+  3 7 -5 4
+consulta_tret creeper
+  creeper
+  -----
+  -----
+  3
+  4
+  7
+consulta_individu 2
+  00110
+  01101
+treure creeper 2
+  error
+consulta_individu 2
+  00110
+  01101
+consulta_individu 3
+  01010
+  11101
+  creeper
+treure creeper 3
+consulta_individu 3
+  01010
+  11101
+consulta_tret creeper
+  creeper
+  -1-1-
+  -0-1-
+  4
+  7
+consulta_individu 6
+  11010
+  10101
+consulta_individu 2
+  00110
+  01101
+distribucio_tret creeper
+  -3 7 -5 4
+treure creeper 7
+treure creeper 4
+consulta_tret creeper
+  error
+afegir ou_ferrat 6
+consulta_individu 6
+  11010
+  10101
+  ou_ferrat
+fi
