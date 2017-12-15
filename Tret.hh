@@ -61,7 +61,7 @@ public:
 
   /** @brief
       \pre Parell_cromosomes c1 és un Parell de cromosomes el qual volem que sigui la característica del tret
-      \post carac del tret = Parell de cromosomes c1
+      \post el p.i. = al consulta_carac_tret.
   */
   
   const set <int> &consulta_carac_tret();

@@ -15,11 +15,15 @@ private:
 
 public:
 
+    /** @brief
+		\pre Experiment
+		\post S'ha creat un experiment nou
+	*/
 	Experiment();
 
 	~Experiment();
 
-		/** @brief
+    /** @brief
 		\pre n = nombre d'individus i m = mida del Parell de cromosomes
 		\post experiment començat i s'ha creat un arbre amb els individus i el respectiu parell de cromosomes
 	*/
@@ -67,7 +71,11 @@ public:
 		\post s'escriurà pel canal estàndard de sortida l'arbre inordre resultant 
 	*/
 	void escriure_arbre(const BinTree<int> &a, const string &t);
-
+    
+    /** @brief
+		\pre a és l'arbre del qual volem fer la distribucio, aux és un arbre buit i t és el tret del qual volem fer la distribucio.
+		\post aux = distribucio de l'arbre d'individus amb t
+	*/
 	void fes_distribucio(const BinTree <int> &a, BinTree <int> &aux,const string &t);
 };
 

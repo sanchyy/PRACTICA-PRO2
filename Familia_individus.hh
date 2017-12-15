@@ -37,11 +37,6 @@ public:
   //modificadora 
 
   /** @brief
-      \pre true;
-      \post map amb tots els individus i el parell de cromosomes de cada individu;
-  */
-
-  /** @brief
       \pre t = nom del tret i id = identificador de l'individu
       \post s'ha desvinculat el tret de l'individu si aquest el tenia, en cas contrari, simplement es mostrarà <em>error</em> pel canal estàndard de sortida
   */
@@ -66,20 +61,20 @@ public:
   void consulta_tret(const string &t);
 
   /** @brief
-      \pre t = nom del tret i id = identificador de l'individu
-      \post s'ha afegit el tret de l'individu si aquest no el tenia, en cas contrari, simplement es mostrarà <em>error</em> pel canal estàndard de sortida
+      \pre id = identificador de l'individu
+      \post en cas que existeixi, s'imprimeix pel canal estàndard de sortida el Parell de Cromosomes i els trets de l'Individu amb id = ID, en cas contrari, simplement es mostrarà <em>error</em> pel canal estàndard de sortida
   */
   void consulta_individu(int id);
 
   /** @brief
-      \pre t = nom del tret i id = identificador de l'individu
-      \post s'ha afegit el tret de l'individu si aquest no el tenia, en cas contrari, simplement es mostrarà <em>error</em> pel canal estàndard de sortida
+      \pre t = nom del tret
+      \post si el tret està al conjunt dels individus, es farà la funcio de distribucio, altrament, es mostrarà <em>error</em> pel canal estàndard de sortida
   */
   bool distribucio_tret(const string &t);
 
   /** @brief
       \pre t = nom del tret i id = identificador de l'individu
-      \post s'ha afegit el tret de l'individu si aquest no el tenia, en cas contrari, simplement es mostrarà <em>error</em> pel canal estàndard de sortida
+      \post si l'individu amb id = ID té el tret 't', retornarà true, altrament, retornarà false
   */
   bool el_te(int id, const string &t); 
 
