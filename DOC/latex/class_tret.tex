@@ -1,0 +1,162 @@
+\hypertarget{class_tret}{}\section{Referència de la Classe Tret}
+\label{class_tret}\index{Tret@{Tret}}
+\subsection*{Mètodes públics}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_tret_a3c892a10a6d209029a303b46b1deff17}{Tret} ()
+\item 
+\hyperlink{class_tret_a858f0ea240f57704eb4cb3bce12ebc58}{$\sim$\+Tret} ()
+\item 
+void \hyperlink{class_tret_ad87c03ee8fb5ec730ca304e29aeb4028}{consulta\+\_\+tret} ()
+\item 
+void \hyperlink{class_tret_aa1d38521e76438e0f6daf705534052a1}{treure\+\_\+tret} (int id)
+\item 
+void \hyperlink{class_tret_a7ae85d74f02887b004fd2fd96a148db7}{afegir\+\_\+tret} (int id, \hyperlink{class_parell__cromosomes}{Parell\+\_\+cromosomes} \&c1)
+\item 
+bool \hyperlink{class_tret_ac05402e277deb769649b9cc9a3c50962}{individu\+\_\+te\+\_\+aquest\+\_\+tret} (int id)
+\item 
+void \hyperlink{class_tret_a0e35984d0b3ac5fb80af88bbbdaa97a7}{modificar\+\_\+carac} (const \hyperlink{class_parell__cromosomes}{Parell\+\_\+cromosomes} \&c1)
+\item 
+int \hyperlink{class_tret_ad5a8e88248b75c502b87a87435facb44}{consultar\+\_\+size} ()
+\item 
+const set$<$ int $>$ \& \hyperlink{class_tret_aea1fbc245127fec4a9fdf5288adc5fc6}{consulta\+\_\+carac\+\_\+tret} ()
+\item 
+void \hyperlink{class_tret_ad2e436baa72978926fd684531396e458}{afegir\+\_\+alset} (int id)
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripció Detallada}
+
+
+Definició a la línia 11 del fitxer Tret.\+hh.
+
+
+
+\subsection{Documentació del Constructor i el Destructor}
+\index{Tret@{Tret}!Tret@{Tret}}
+\index{Tret@{Tret}!Tret@{Tret}}
+\subsubsection[{\texorpdfstring{Tret()}{Tret()}}]{\setlength{\rightskip}{0pt plus 5cm}Tret\+::\+Tret (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_tret_a3c892a10a6d209029a303b46b1deff17}{}\label{class_tret_a3c892a10a6d209029a303b46b1deff17}
+\index{Tret@{Tret}!````~Tret@{$\sim$\+Tret}}
+\index{````~Tret@{$\sim$\+Tret}!Tret@{Tret}}
+\subsubsection[{\texorpdfstring{$\sim$\+Tret()}{~Tret()}}]{\setlength{\rightskip}{0pt plus 5cm}Tret\+::$\sim$\+Tret (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_tret_a858f0ea240f57704eb4cb3bce12ebc58}{}\label{class_tret_a858f0ea240f57704eb4cb3bce12ebc58}
+
+
+\subsection{Documentació de les Funcions Membre}
+\index{Tret@{Tret}!consulta\+\_\+tret@{consulta\+\_\+tret}}
+\index{consulta\+\_\+tret@{consulta\+\_\+tret}!Tret@{Tret}}
+\subsubsection[{\texorpdfstring{consulta\+\_\+tret()}{consulta_tret()}}]{\setlength{\rightskip}{0pt plus 5cm}void Tret\+::consulta\+\_\+tret (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_tret_ad87c03ee8fb5ec730ca304e29aeb4028}{}\label{class_tret_ad87c03ee8fb5ec730ca304e29aeb4028}
+\begin{DoxyPrecond}{Precondició}
+t = nom d\textquotesingle{}un possible tret 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+si no existeix, s\textquotesingle{}escriurà {\itshape error} pel canal estandard de sortida, en cas contrari, s\textquotesingle{}escriurà pel canal estandart de sortida la possible combinacio de gens que genera aquest tret, i els individus que el tenen 
+\end{DoxyPostcond}
+\index{Tret@{Tret}!treure\+\_\+tret@{treure\+\_\+tret}}
+\index{treure\+\_\+tret@{treure\+\_\+tret}!Tret@{Tret}}
+\subsubsection[{\texorpdfstring{treure\+\_\+tret(int id)}{treure_tret(int id)}}]{\setlength{\rightskip}{0pt plus 5cm}void Tret\+::treure\+\_\+tret (
+\begin{DoxyParamCaption}
+\item[{int}]{id}
+\end{DoxyParamCaption}
+)}\hypertarget{class_tret_aa1d38521e76438e0f6daf705534052a1}{}\label{class_tret_aa1d38521e76438e0f6daf705534052a1}
+\begin{DoxyPrecond}{Precondició}
+t = nom del tret i id = identificador de l\textquotesingle{}individu 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+s\textquotesingle{}ha desvinculat el tret de l\textquotesingle{}individu si aquest el tenia, en cas contrari, simplement es mostrarà {\itshape error} pel canal estàndard de sortida 
+\end{DoxyPostcond}
+\index{Tret@{Tret}!afegir\+\_\+tret@{afegir\+\_\+tret}}
+\index{afegir\+\_\+tret@{afegir\+\_\+tret}!Tret@{Tret}}
+\subsubsection[{\texorpdfstring{afegir\+\_\+tret(int id, Parell\+\_\+cromosomes \&c1)}{afegir_tret(int id, Parell_cromosomes &c1)}}]{\setlength{\rightskip}{0pt plus 5cm}void Tret\+::afegir\+\_\+tret (
+\begin{DoxyParamCaption}
+\item[{int}]{id, }
+\item[{{\bf Parell\+\_\+cromosomes} \&}]{c1}
+\end{DoxyParamCaption}
+)}\hypertarget{class_tret_a7ae85d74f02887b004fd2fd96a148db7}{}\label{class_tret_a7ae85d74f02887b004fd2fd96a148db7}
+\begin{DoxyPrecond}{Precondició}
+t = nom del tret i id = identificador de l\textquotesingle{}individu 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+s\textquotesingle{}ha afegit el tret de l\textquotesingle{}individu si aquest no el tenia, en cas contrari, simplement es mostrarà {\itshape error} pel canal estàndard de sortida 
+\end{DoxyPostcond}
+\index{Tret@{Tret}!individu\+\_\+te\+\_\+aquest\+\_\+tret@{individu\+\_\+te\+\_\+aquest\+\_\+tret}}
+\index{individu\+\_\+te\+\_\+aquest\+\_\+tret@{individu\+\_\+te\+\_\+aquest\+\_\+tret}!Tret@{Tret}}
+\subsubsection[{\texorpdfstring{individu\+\_\+te\+\_\+aquest\+\_\+tret(int id)}{individu_te_aquest_tret(int id)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Tret\+::individu\+\_\+te\+\_\+aquest\+\_\+tret (
+\begin{DoxyParamCaption}
+\item[{int}]{id}
+\end{DoxyParamCaption}
+)}\hypertarget{class_tret_ac05402e277deb769649b9cc9a3c50962}{}\label{class_tret_ac05402e277deb769649b9cc9a3c50962}
+\begin{DoxyPrecond}{Precondició}
+true 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+s\textquotesingle{}ha escrit pel canal estàndard de sortida l\textquotesingle{}arbre resultant en inordre. 
+\end{DoxyPostcond}
+\index{Tret@{Tret}!modificar\+\_\+carac@{modificar\+\_\+carac}}
+\index{modificar\+\_\+carac@{modificar\+\_\+carac}!Tret@{Tret}}
+\subsubsection[{\texorpdfstring{modificar\+\_\+carac(const Parell\+\_\+cromosomes \&c1)}{modificar_carac(const Parell_cromosomes &c1)}}]{\setlength{\rightskip}{0pt plus 5cm}void Tret\+::modificar\+\_\+carac (
+\begin{DoxyParamCaption}
+\item[{const {\bf Parell\+\_\+cromosomes} \&}]{c1}
+\end{DoxyParamCaption}
+)}\hypertarget{class_tret_a0e35984d0b3ac5fb80af88bbbdaa97a7}{}\label{class_tret_a0e35984d0b3ac5fb80af88bbbdaa97a7}
+\begin{DoxyPrecond}{Precondició}
+\hyperlink{class_parell__cromosomes}{Parell\+\_\+cromosomes} c1 és un Parell de cromosomes el qual volem que sigui la característica del tret 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+carac del tret = Parell de cromosomes c1 
+\end{DoxyPostcond}
+\index{Tret@{Tret}!consultar\+\_\+size@{consultar\+\_\+size}}
+\index{consultar\+\_\+size@{consultar\+\_\+size}!Tret@{Tret}}
+\subsubsection[{\texorpdfstring{consultar\+\_\+size()}{consultar_size()}}]{\setlength{\rightskip}{0pt plus 5cm}int Tret\+::consultar\+\_\+size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_tret_ad5a8e88248b75c502b87a87435facb44}{}\label{class_tret_ad5a8e88248b75c502b87a87435facb44}
+\begin{DoxyPrecond}{Precondició}
+true 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+retorna la mida del set (individus\+\_\+amb\+\_\+aquest\+\_\+tret) del paramatre implicit 
+\end{DoxyPostcond}
+\index{Tret@{Tret}!consulta\+\_\+carac\+\_\+tret@{consulta\+\_\+carac\+\_\+tret}}
+\index{consulta\+\_\+carac\+\_\+tret@{consulta\+\_\+carac\+\_\+tret}!Tret@{Tret}}
+\subsubsection[{\texorpdfstring{consulta\+\_\+carac\+\_\+tret()}{consulta_carac_tret()}}]{\setlength{\rightskip}{0pt plus 5cm}const set$<$int$>$\& Tret\+::consulta\+\_\+carac\+\_\+tret (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_tret_aea1fbc245127fec4a9fdf5288adc5fc6}{}\label{class_tret_aea1fbc245127fec4a9fdf5288adc5fc6}
+\begin{DoxyPrecond}{Precondició}
+\hyperlink{class_parell__cromosomes}{Parell\+\_\+cromosomes} c1 és un Parell de cromosomes el qual volem que sigui la característica del tret 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+el p.\+i. = al consulta\+\_\+carac\+\_\+tret. 
+\end{DoxyPostcond}
+\index{Tret@{Tret}!afegir\+\_\+alset@{afegir\+\_\+alset}}
+\index{afegir\+\_\+alset@{afegir\+\_\+alset}!Tret@{Tret}}
+\subsubsection[{\texorpdfstring{afegir\+\_\+alset(int id)}{afegir_alset(int id)}}]{\setlength{\rightskip}{0pt plus 5cm}void Tret\+::afegir\+\_\+alset (
+\begin{DoxyParamCaption}
+\item[{int}]{id}
+\end{DoxyParamCaption}
+)}\hypertarget{class_tret_ad2e436baa72978926fd684531396e458}{}\label{class_tret_ad2e436baa72978926fd684531396e458}
+\begin{DoxyPrecond}{Precondició}
+id = ID que vols afegir al set 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+la id ha estat afegida 
+\end{DoxyPostcond}
+
+
+La documentació d\textquotesingle{}aquesta classe es va generar a partir del següent fitxer\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_tret_8hh}{Tret.\+hh}\end{DoxyCompactItemize}
